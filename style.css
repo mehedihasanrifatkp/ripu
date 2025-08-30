@@ -37,7 +37,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   flex-direction: column;
   justify-content: center;
 }
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* ডেস্কটপে ৫টি প্রতি লাইনে */
+  gap: 20px;
+  padding: 20px;
+}
 
+.service-box {
+  background: #1c1c1c;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-box img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.service-box h3 {
+  font-size: 16px;
+  color: #fcfcfc;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Core content hover effect */
 .core-content-holder:hover {
   background: #222;
   transform: translateY(-5px);
@@ -57,19 +88,158 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: 5px 0 0;
 }
 
+/* রেসপন্সিভ: ট্যাবলেট / মিডিয়াম স্ক্রিন */
 @media (max-width: 1024px) {
-  .review-row-holder {
-    grid-template-columns: repeat(3, 150px); /* ট্যাবলেটে ৩টা */
+  .services-container {
+    grid-template-columns: repeat(3, 1fr); /* ৩টি প্রতি লাইনে */
   }
 }
 
+/* রেসপন্সিভ: মোবাইল */
 @media (max-width: 600px) {
-  .review-row-holder {
-    grid-template-columns: repeat(2, 150px); /* মোবাইলে ২টা */
+  .services-container {
+    grid-template-columns: repeat(2, 150px); /* ২টি প্রতি লাইনে এবং প্রতিটি 100px */
+    justify-content: center; /* কেন্দ্রিকাল সারিবদ্ধ করতে */
   }
+}
 
 
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 5%;
+  height: 100vh;
+}
 
+/* Left Side */
+.hero-text {
+  flex: 0 0 35%;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.button.login {
+  background: #035aac;
+}
+
+.button.register {
+  background: #047a14;
+}
+
+/* Right Side */
+.hero-image {
+  flex: 0 0 65%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 40px 5%;
+  }
+  .hero-text {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  .hero-image {
+    flex: 1;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  <style>
+/* Global padding and container */
+.global-padding {
+  padding: 2rem 5%;
+}
+
+/* Text block animations */
+.text-block-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* World corner images container */
+.world-all-corner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.world-corner-holder {
+  flex: 1 1 200px; /* Minimum width 200px */
+  max-width: 250px;
+}
+
+.world-corner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Fade-in animation (optional) */
+.fade-in-move-on-scroll {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-move-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-block-content h2 {
+    font-size: 1.5rem;
+  }
+  .world-corner-holder {
+    flex: 1 1 45%; /* 2 per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .text-block-content h2 {
+    font-size: 1.2rem;
+  }
+  .world-corner-holder {
+    flex: 1 1 100%; /* 1 per row */
+  }
 
 
 
